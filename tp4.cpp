@@ -1,6 +1,17 @@
 #include "tp4.hpp"
 #include <iostream>
 using namespace std;
+template <typename T>
+
+	SmartPointer<T>(){
+        *mNbRef = 1;
+    }
+    //Constructeur avec pointeur vers fonction de destruction et la donnée
+    SmartPointer<T> (T* ptr,DeleteFunctionType* dft){
+        mPtr = ptr;
+    }
+
+
 int main ( )
 {
 	cout << "bonjour!" << endl;

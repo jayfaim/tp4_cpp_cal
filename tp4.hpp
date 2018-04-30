@@ -28,15 +28,13 @@
       // un pointeur vers une fonction statique de destruction du pointeur.
       DeleteFunctionType* mDeleteFonction;
     
-    public :
+      public :
       //Constructeur vide
-      SmartPointer<T>(){
-        *mNbRef = 1;
-      }
+      SmartPointer<T>();
+
       //Constructeur avec pointeur vers fonction de destruction et la donnée
-      SmartPointer<T> (T* ptr,DeleteFunctionType* dft){
-        mPtr = ptr;
-      }
+      SmartPointer<T> (T* ptr,DeleteFunctionType* dft);
+      
       //Constructeur par copie(prend une référence vers un autre smartpointer)
       SmartPointer<T> (const SmartPointer<T>&);
       void deletePtr(T* ptr);
