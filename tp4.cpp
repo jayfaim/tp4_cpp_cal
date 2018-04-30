@@ -52,12 +52,12 @@ using namespace std;
 	}
 	template<typename T>
 	T* SmartPointer<T>::operator->(){
-		return this->mPtr;	
+		return &*this->mPtr;	
 	}
 
 	template<typename T>
-	SmartPointer<T>& SmartPointer<T>::operator*(const SmartPointer<T> &copie){
-		
+	T* SmartPointer<T>::operator*(){
+		return *this->mPtr;
 	}
 	/*
 	template<typename T>

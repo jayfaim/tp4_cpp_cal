@@ -46,7 +46,7 @@
       void destructeur(SmartPointer);
       SmartPointer<T>& operator=(const SmartPointer<T>&);
 	    T* operator->();
-	    SmartPointer<T>& operator*(const SmartPointer<T>&);
+	    T* operator*();
       SmartPointer<T>& operator[](int idx) const;
  
       // — La fonction getCount(), qui vous donnera accès au nombre de références à mPtr.
