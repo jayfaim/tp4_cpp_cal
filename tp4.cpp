@@ -21,6 +21,20 @@ template <typename T>
 	SmartPointer<T>::getCount(){
 		return 0;
 	
+	template <typename T>
+	SmartPointer<T>::SmartPointer(T* ptr,DeleteFunctionType* dft){
+		*this->mNbRef = *this->mNbRef + 1;
+		this->mPtr = ptr;
+		this->mDeleteFunction = dft;
+	}
+
+	template <typename T>
+	SmartPointer<T>::SmartPointer(SmartPointer<T> &smp){
+		mNbRef = new int(*smp.mNbRef + 1);
+		smp.mNbRef = mNbRef;
+		mPtr = smp.mPtr;
+	}
+
 	template<typename T>
 	int SmartPointer<T>::getCount(){
 		return *this->mNbRef;
@@ -34,7 +48,7 @@ template <typename T>
 		delete ptr;
 	}
       
-	static void SmartPointer::deleteTab(T* ptr){
+	static void  deleteTab(T* ptr){
 		delete[] ptr;
 	}
 
@@ -42,7 +56,8 @@ int main ( )
 {
 	cout << "Fuck you!!" << endl;
 	SmartPointer<int> test;
-	int tmp = test.getCount();
+	SmartPointer<int> test2 = test;
+	int tmp = test2.getCount();
 	cout << "nbref = " << tmp << endl;
 	/**
 	// TEST LE COMPTE DE REFERENCES
