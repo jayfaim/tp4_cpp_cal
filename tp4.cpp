@@ -52,8 +52,9 @@ using namespace std;
 	}
 	template<typename T>
 	SmartPointer<T>& SmartPointer<T>::operator->(){
+		cout << "test accès!" << endl;
 		cout << "test valeur *mPtr = " << *mPtr << endl;
-		return *mPtr;	
+		return &mPtr;	
 	}
 
 	template<typename T>
@@ -69,17 +70,20 @@ using namespace std;
 	int main ( )
 {
 	cout << "Fuck you!!" << endl;
+	cout << "***********tests jay*************" << endl;
 	SmartPointer<int> test1(new int(4));
 	SmartPointer<int> test2;
-	SmartPointer<string> test3(new string("toto"));
 	test2 = test1;
 	int tmp = test2.getCount();
 	cout << "nbref = " << tmp << endl;
 	tmp = test1.getCount();
 	cout << "nbref = " << tmp << endl;
+	string *string_tmp = new string("je suis une string test");
+	SmartPointer<string> test3(&string_tmp);
+
+	cout << "**********tests max**************" << endl;
 	int foo [5] = { 16, 2, 77, 40, 12071 };
 	SmartPointer<int []> testTab1;
-	cout << "taille test3 = " << tmp << endl;
 
 	/**
 	// TEST LE COMPTE DE REFERENCES
