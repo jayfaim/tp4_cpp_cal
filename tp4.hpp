@@ -30,9 +30,13 @@
     
     public :
       //Constructeur vide
-      SmartPointer();
+      SmartPointer<T>(){
+        *mNbRef = 1;
+      }
       //Constructeur avec pointeur vers fonction de destruction et la donnée
-      SmartPointer(T* ptr,DeleteFunctionType* dft);
+      SmartPointer<T> (T* ptr,DeleteFunctionType* dft){
+        mPtr = ptr;
+      }
       //Constructeur par copie(prend une référence vers un autre smartpointer)
       SmartPointer<T> (const SmartPointer<T>&);
       void deletePtr(T* ptr);
