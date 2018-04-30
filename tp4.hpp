@@ -32,6 +32,8 @@
       //Constructeur vide
       SmartPointer<T>();
 
+      SmartPointer<T>(T*);
+
       //Constructeur avec pointeur vers fonction de destruction et la donnée
       SmartPointer<T>(T*,DeleteFunctionType*);
       
@@ -42,10 +44,10 @@
       static void deleteTab(T*);
       
       void destructeur(SmartPointer);
-      SmartPointer<T>& operator=(const SmartPointer<T> &copie);
-      SmartPointer operator->();
-      SmartPointer operator*(SmartPointer);
-      SmartPointer operator[](SmartPointer);
+      SmartPointer<T>& operator=(const SmartPointer<T>&);
+      SmartPointer<T>& operator->();
+      SmartPointer<T>& operator*(const SmartPointer<T>&);
+      SmartPointer<T>& operator[](const SmartPointer<T>&);
       // — La fonction getCount(), qui vous donnera accès au nombre de références à mPtr.
       //  Cette fonction pourra être utilisée durant le débogage avec “assert”. 
       int getCount();

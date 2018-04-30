@@ -7,6 +7,12 @@ using namespace std;
 	}
 
 	template <typename T>
+	SmartPointer<T>::SmartPointer(T* ptr){
+		*this->mNbRef = *this->mNbRef + 1;
+		this->mPtr = ptr;
+	}
+
+	template <typename T>
 	SmartPointer<T>::SmartPointer(T* ptr,DeleteFunctionType* dft){
 		*this->mNbRef = *this->mNbRef + 1;
 		this->mPtr = ptr;
@@ -22,6 +28,7 @@ using namespace std;
 
 	template<typename T>
 	int SmartPointer<T>::getCount(){
+		cout << "test valeur *mPtr = " << *mPtr << endl;
 		return *this->mNbRef;
 	}
 
@@ -44,8 +51,9 @@ using namespace std;
 		return *this;
 	}
 	template<typename T>
-	SmartPointer<T>& SmartPointer<T>::operator->(const SmartPointer<T> &copie){
-		
+	SmartPointer<T>& SmartPointer<T>::operator->(){
+		cout << "test valeur *mPtr = " << *mPtr << endl;
+		return *mPtr;	
 	}
 	template<typename T>
 	SmartPointer<T>& SmartPointer<T>::operator*(const SmartPointer<T> &copie){
@@ -59,13 +67,17 @@ using namespace std;
 	int main ( )
 {
 	cout << "Fuck you!!" << endl;
-	SmartPointer<int> test1;
+	SmartPointer<int> test1(new int(4));
 	SmartPointer<int> test2;
+	SmartPointer<string> test3(new string("toto"));
 	test2 = test1;
 	int tmp = test2.getCount();
 	cout << "nbref = " << tmp << endl;
 	tmp = test1.getCount();
 	cout << "nbref = " << tmp << endl;
+	test3->data();
+	cout << "taille test3 = " << tmp << endl;
+
 
 	/**
 	// TEST LE COMPTE DE REFERENCES
@@ -82,7 +94,7 @@ using namespace std;
 	assert ( sm4 . getCount () ==4 && sm3 . getCount () ==4) ;
 	assert ( sm2 . getCount () ==4 && sm . getCount () ==4) ;
 	// TEST LE DESTRUCTEUR
-	SmartPointer < std :: string > smartPS3 ;
+	SmartPointer< std :: string > smartPS3 ;
 	{
 		SmartPointer < std :: string > smartPS ( new string ( " bonjour " ) ) ;
 		SmartPointer < std :: string > smartPS2 = smartPS ;
