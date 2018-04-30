@@ -33,10 +33,10 @@
       SmartPointer<T>();
 
       //Constructeur avec pointeur vers fonction de destruction et la donnée
-      SmartPointer<T> (T* ptr,DeleteFunctionType* dft);
+      //SmartPointer(T*,DeleteFunctionType*);
       
       //Constructeur par copie(prend une référence vers un autre smartpointer)
-      SmartPointer<T> (const SmartPointer<T>&);
+      //template<T> SmartPointer(const SmartPointer<T>&);
       void deletePtr(T* ptr);
       void deleteTab(T* ptr);
       void destructeur(SmartPointer p);
