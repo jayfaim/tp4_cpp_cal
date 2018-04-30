@@ -51,10 +51,8 @@ using namespace std;
 		return *this;
 	}
 	template<typename T>
-	SmartPointer<T>& SmartPointer<T>::operator->(){
-		cout << "test accès!" << endl;
-		cout << "test valeur *mPtr = " << *mPtr << endl;
-		return &mPtr;	
+	T* SmartPointer<T>::operator->(){
+		return this->mPtr;	
 	}
 
 	template<typename T>
@@ -78,9 +76,11 @@ using namespace std;
 	cout << "nbref = " << tmp << endl;
 	tmp = test1.getCount();
 	cout << "nbref = " << tmp << endl;
-	string *string_tmp = new string("je suis une string test");
-	SmartPointer<string> test3(&string_tmp);
+	SmartPointer<string> test3(new string("je suis une string test"));
+	cout << "taille de test3 = " << test3->size() << endl;
 
+	cout << "" << endl;
+	cout << "" << endl;
 	cout << "**********tests max**************" << endl;
 	int foo [5] = { 16, 2, 77, 40, 12071 };
 	SmartPointer<int []> testTab1;

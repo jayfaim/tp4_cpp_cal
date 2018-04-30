@@ -45,7 +45,7 @@
       
       void destructeur(SmartPointer);
       SmartPointer<T>& operator=(const SmartPointer<T>&);
-	    SmartPointer<T>& operator->();
+	    T* operator->();
 	    SmartPointer<T>& operator*(const SmartPointer<T>&);
       SmartPointer<T>& operator[](int idx) const;
  
