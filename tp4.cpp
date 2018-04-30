@@ -7,7 +7,7 @@ template <typename T>
         *mNbRef = 1;
     }
     //Constructeur avec pointeur vers fonction de destruction et la donnée
-    SmartPointer<T> (T* ptr,DeleteFunctionType* dft){
+    SmartPointer<T> (T* ptr, DeleteFunctionType* dft){
         mPtr = ptr;
     }
 
@@ -15,7 +15,13 @@ template <typename T>
 		return *mNbRef;
 	}
 	 
-
+	static void SmartPointer::deletePtr(T* ptr){
+		delete ptr;
+	}
+      
+	static void SmartPointer::deleteTab(T* ptr){
+		delete[] ptr;
+	}
 
 int main ( )
 {
