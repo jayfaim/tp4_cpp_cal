@@ -11,6 +11,11 @@ template <typename T>
         mPtr = ptr;
     }
 
+	int getCount() const{
+		return *mNbRef;
+	}
+	 
+
 
 int main ( )
 {

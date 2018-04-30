@@ -46,9 +46,7 @@
       SmartPointer operator[](SmartPointer p);
       // — La fonction getCount(), qui vous donnera accès au nombre de références à mPtr.
       //  Cette fonction pourra être utilisée durant le débogage avec “assert”. 
-      int getCount() const{
-          return *mNbRef;
-      }
+      int getCount() const;
   };
 
 #endif
