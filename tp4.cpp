@@ -4,7 +4,9 @@ using namespace std;
 int main ( )
 {
 	cout << "bonjour!" << endl;
-	SmartPointer<int> test;
+	SmartPointer<int> test();
+	int tmp = test.getCount();
+	cout << "nbref = " << tmp;
 	/**
 	// TEST LE COMPTE DE REFERENCES
 	SmartPointer < int > sm ( new int (4) ) ;

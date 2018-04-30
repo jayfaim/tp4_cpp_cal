@@ -16,7 +16,7 @@
       T *mPtr;
       
       // un pointeur sur un entier compteur du nombre de références à mPtr.
-      int *mNbRef;
+      int *mNbRef = 0;
 
       //J'ai bougé la redéfinition avant qu'on l'appelle sinon ca plante
       //Voici une définition qui pourra être utile pour la déclaration de vos pointeurs sur les fonctions statiques :
@@ -31,11 +31,12 @@
     public :
       //Constructeur vide
       SmartPointer<T>(){
-        *mNbRef = 1;
+        *mNbRef++;
       }
       //Constructeur avec pointeur vers fonction de destruction et la donnée
       SmartPointer<T> (T* ptr,DeleteFunctionType* dft){
         mPtr = ptr;
+        *mNbRef++;
       }
       //Constructeur par copie(prend une référence vers un autre smartpointer)
       SmartPointer<T> (const SmartPointer<T>&);
@@ -48,7 +49,9 @@
       SmartPointer operator[](SmartPointer p);
       // — La fonction getCount(), qui vous donnera accès au nombre de références à mPtr.
       //  Cette fonction pourra être utilisée durant le débogage avec “assert”. 
-      int getCount() const;
+      int getCount() const{
+          return *mNbRef;
+      }
   };
 
 #endif
