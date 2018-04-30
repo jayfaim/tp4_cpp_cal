@@ -42,7 +42,7 @@
       static void deleteTab(T*);
       
       void destructeur(SmartPointer);
-      SmartPointer operator=(SmartPointer);
+      SmartPointer<T>& operator=(const SmartPointer<T> &copie);
       SmartPointer operator->();
       SmartPointer operator*(SmartPointer);
       SmartPointer operator[](SmartPointer);

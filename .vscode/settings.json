@@ -4,6 +4,7 @@
         "utility": "cpp",
         "xmemory0": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "string": "cpp"
     }
 }

@@ -33,6 +33,12 @@ using namespace std;
 		delete[] ptr;
 	}
 
+	template<typename T>
+	SmartPointer<T>& SmartPointer<T>::operator=(const SmartPointer<T> &copie){
+		mPtr = copie.mPtr;
+	return *this;
+	}
+
 	int main ( )
 {
 	cout << "Fuck you!!" << endl;
