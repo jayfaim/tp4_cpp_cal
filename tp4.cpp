@@ -1,17 +1,35 @@
 #include "tp4.hpp"
 #include <iostream>
 using namespace std;
+template <typename T>
 	
-	template <typename T>
 	SmartPointer<T>::SmartPointer(){
 		*this->mNbRef = *this->mNbRef + 1;
 	}
+
+	template <typename T>
+	SmartPointer<T>(){
+        *mNbRef = 1;
+    }
+
+    //Constructeur avec pointeur vers fonction de destruction et la donnée
+    template <typename T>
+	SmartPointer<T> (T* ptr, DeleteFunctionType* dft){
+        mPtr = ptr;
+    }
+	template <typename T>
+	SmartPointer<T>::getCount(){
+		return 0;
 	
 	template<typename T>
 	int SmartPointer<T>::getCount(){
 		return *this->mNbRef;
 	}
-	/**
+
+	int SmartPointer::getCount() const{
+		return *mNbRef;
+	}
+	 
 	static void SmartPointer::deletePtr(T* ptr){
 		delete ptr;
 	}
@@ -19,7 +37,7 @@ using namespace std;
 	static void SmartPointer::deleteTab(T* ptr){
 		delete[] ptr;
 	}
-	**/
+
 int main ( )
 {
 	cout << "Fuck you!!" << endl;

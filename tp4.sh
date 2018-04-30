@@ -5,8 +5,8 @@
 #!/bin/bash
 # Commande pour compiler un programme c++
 #g++ --std=c++11 -c main.cpp fonctions.cpp #  <---------------- UBUNTU
-g++ -c testMain.cpp #<--------------------- Mint / Cygwin
+g++ -c tp4.cpp #<--------------------- Mint / Cygwin
 sleep 1
-g++ -o start testMain.o
+g++ -o start tp4.o
 ./start.exe
 exit 0
