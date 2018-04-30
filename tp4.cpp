@@ -14,6 +14,13 @@ using namespace std;
 		this->mDeleteFunction = dft;
 	}
 
+	template <typename T>
+	SmartPointer<T>::SmartPointer(SmartPointer<T> &smp){
+		mNbRef = new int(*smp.mNbRef + 1);
+		smp.mNbRef = mNbRef;
+		mPtr = smp.mPtr;
+	}
+
 	template<typename T>
 	int SmartPointer<T>::getCount(){
 		return *this->mNbRef;
@@ -31,7 +38,8 @@ int main ( )
 {
 	cout << "Fuck you!!" << endl;
 	SmartPointer<int> test;
-	int tmp = test.getCount();
+	SmartPointer<int> test2 = test;
+	int tmp = test2.getCount();
 	cout << "nbref = " << tmp << endl;
 	/**
 	// TEST LE COMPTE DE REFERENCES
