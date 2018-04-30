@@ -43,8 +43,9 @@
       static void deletePtr(T*);
       static void deleteTab(T*);
       
-      //~SmartPointer<T>();
+      ~SmartPointer<T>();
       SmartPointer<T>& operator=(const SmartPointer<T>&);
+      bool operator==(const T&);
 	    T* operator->();
 	    T* operator*() const;
       SmartPointer<T>& operator[](int idx) const;
