@@ -43,6 +43,18 @@ using namespace std;
 		mDeleteFunction = copie.mDeleteFunction;
 		return *this;
 	}
+	template<typename T>
+	SmartPointer<T>& SmartPointer<T>::operator->(const SmartPointer<T> &copie){
+		
+	}
+	template<typename T>
+	SmartPointer<T>& SmartPointer<T>::operator*(const SmartPointer<T> &copie){
+		
+	}
+	template<typename T>
+	SmartPointer<T>& SmartPointer<T>::operator[](const SmartPointer<T> &copie){
+		
+	}
 
 	int main ( )
 {
