@@ -1,6 +1,9 @@
+#include "tp4.hpp"
+#include <iostream>
+using namespace std;
 int main ( )
 {
-	echo "bonjour!";
+	cout << "bonjour!" << endl;
 	/**
 	// TEST LE COMPTE DE REFERENCES
 	SmartPointer < int > sm ( new int (4) ) ;
