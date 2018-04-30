@@ -26,14 +26,14 @@
       typedef void (* DeleteFunctionType )(T *p);
       
       // un pointeur vers une fonction statique de destruction du pointeur.
-      DeleteFunctionType* mDeleteFonction;
+      DeleteFunctionType* mDeleteFunction;
     
       public :
       //Constructeur vide
       SmartPointer<T>();
 
       //Constructeur avec pointeur vers fonction de destruction et la donnée
-      //SmartPointer(T*,DeleteFunctionType*);
+      SmartPointer(T*,DeleteFunctionType*);
       
       //Constructeur par copie(prend une référence vers un autre smartpointer)
       //template<T> SmartPointer(const SmartPointer<T>&);

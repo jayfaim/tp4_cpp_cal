@@ -7,16 +7,23 @@ using namespace std;
 		*this->mNbRef = *this->mNbRef + 1;
 	}
 	
+	template <typename T>
+	SmartPointer<T>::SmartPointer(T* ptr,DeleteFunctionType* dft){
+		*this->mNbRef = *this->mNbRef + 1;
+		this->mPtr = ptr;
+		this->mDeleteFunction = dft;
+	}
+
 	template<typename T>
 	int SmartPointer<T>::getCount(){
 		return *this->mNbRef;
 	}
 	/**
-	static void SmartPointer::deletePtr(T* ptr){
+	static void deletePtr(T* ptr){
 		delete ptr;
 	}
       
-	static void SmartPointer::deleteTab(T* ptr){
+	static void  deleteTab(T* ptr){
 		delete[] ptr;
 	}
 	**/
