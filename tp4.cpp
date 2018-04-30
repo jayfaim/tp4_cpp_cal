@@ -2,15 +2,14 @@
 #include <iostream>
 using namespace std;
 template <typename T>
+	
+	SmartPointer<T>::SmartPointer(){
+		this->*mNbRef++;
+	}
 
-	SmartPointer<T>(){
-        *mNbRef = 1;
-    }
-    //Constructeur avec pointeur vers fonction de destruction et la donnée
-    SmartPointer<T> (T* ptr,DeleteFunctionType* dft){
-        mPtr = ptr;
-    }
-
+	SmartPointer<T>::getCount(){
+		return 0;
+	}
 
 int main ( )
 {
