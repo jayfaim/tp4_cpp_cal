@@ -60,8 +60,8 @@ using namespace std;
 		
 	}
 	template<typename T>
-	SmartPointer<T>& SmartPointer<T>::operator[](const SmartPointer<T> &copie){
-		
+	SmartPointer<T>& SmartPointer<T>::operator[](int idx) const{
+		return SmartPointer<T>[idx];
 	}
 
 	int main ( )
@@ -75,6 +75,8 @@ using namespace std;
 	cout << "nbref = " << tmp << endl;
 	tmp = test1.getCount();
 	cout << "nbref = " << tmp << endl;
+	int foo [5] = { 16, 2, 77, 40, 12071 };
+	SmartPointer<int []> testTab1;
 	test3->data();
 	cout << "taille test3 = " << tmp << endl;
 
