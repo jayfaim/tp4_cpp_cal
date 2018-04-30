@@ -43,7 +43,7 @@
       static void deletePtr(T*);
       static void deleteTab(T*);
       
-      void destructeur(SmartPointer);
+      //~SmartPointer<T>();
       SmartPointer<T>& operator=(const SmartPointer<T>&);
 	    T* operator->();
 	    T* operator*();

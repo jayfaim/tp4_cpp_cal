@@ -57,8 +57,19 @@ using namespace std;
 
 	template<typename T>
 	T* SmartPointer<T>::operator*(){
-		return *this->mPtr;
+		return this->mPtr;
 	}
+
+	/**
+	template<typename T>
+	SmartPointer<T>::~SmartPointer(){
+		if(*this->mNbRef > 1){
+			*this->mNbRef = *this->mNbRef - 1;
+		}else{
+			*this->mDeleteFunction();
+		}
+	}
+	**/
 	/*
 	template<typename T>
 	SmartPointer<T>& SmartPointer<T>::operator[](int idx) const{
@@ -78,7 +89,8 @@ using namespace std;
 	cout << "nbref = " << tmp << endl;
 	SmartPointer<string> test3(new string("je suis une string test"));
 	cout << "taille de test3 = " << test3->size() << endl;
-
+	string *str_tmp = *test3;
+	cout << "test operateur * test3 = " << *str_tmp << endl;
 	cout << "" << endl;
 	cout << "" << endl;
 	cout << "**********tests max**************" << endl;
