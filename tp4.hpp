@@ -16,7 +16,7 @@
       T *mPtr;
       
       // un pointeur sur un entier compteur du nombre de références à mPtr.
-      int *mNbRef = 0;
+      int *mNbRef = new int(0);
 
       //J'ai bougé la redéfinition avant qu'on l'appelle sinon ca plante
       //Voici une définition qui pourra être utile pour la déclaration de vos pointeurs sur les fonctions statiques :
@@ -46,7 +46,7 @@
       SmartPointer operator[](SmartPointer p);
       // — La fonction getCount(), qui vous donnera accès au nombre de références à mPtr.
       //  Cette fonction pourra être utilisée durant le débogage avec “assert”. 
-      int getCount() const;
+      int getCount();
   };
 
 #endif
