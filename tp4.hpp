@@ -44,6 +44,11 @@
       static void deleteTab(T*);
       
       void destructeur(SmartPointer);
+      SmartPointer<T>& operator=(const SmartPointer<T>&);
+	    SmartPointer<T>& operator->();
+	    SmartPointer<T>& operator*(const SmartPointer<T>&);
+      SmartPointer<T>& operator[](int idx) const;
+ 
       // — La fonction getCount(), qui vous donnera accès au nombre de références à mPtr.
       //  Cette fonction pourra être utilisée durant le débogage avec “assert”. 
       int getCount();

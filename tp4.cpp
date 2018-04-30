@@ -56,6 +56,16 @@ using namespace std;
 		return *mPtr;	
 	}
 
+	template<typename T>
+	SmartPointer<T>& SmartPointer<T>::operator*(const SmartPointer<T> &copie){
+		
+	}
+	/*
+	template<typename T>
+	SmartPointer<T>& SmartPointer<T>::operator[](int idx) const{
+		return SmartPointer<T>[idx];
+	}
+	*/
 	int main ( )
 {
 	cout << "Fuck you!!" << endl;
@@ -67,7 +77,9 @@ using namespace std;
 	cout << "nbref = " << tmp << endl;
 	tmp = test1.getCount();
 	cout << "nbref = " << tmp << endl;
-	tmp = test3->size();
+	int foo [5] = { 16, 2, 77, 40, 12071 };
+	SmartPointer<int []> testTab1;
+	test3->data();
 	cout << "taille test3 = " << tmp << endl;
 
 	/**
