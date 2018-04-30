@@ -15,10 +15,12 @@ using namespace std;
 
 	template <typename T>
 	SmartPointer<T>::SmartPointer(SmartPointer<T> &smp){
-		mNbRef = new int(*smp.mNbRef + 1);
-		smp.mNbRef = mNbRef;
+		mNbRef = smp.mNbRef;
+		*mNbRef = *mNbRef + 1;
 		mPtr = smp.mPtr;
-	}	template<typename T>
+	}	
+
+	template<typename T>
 	int SmartPointer<T>::getCount(){
 		return *this->mNbRef;
 	}
@@ -35,16 +37,24 @@ using namespace std;
 
 	template<typename T>
 	SmartPointer<T>& SmartPointer<T>::operator=(const SmartPointer<T> &copie){
+		mNbRef = copie.mNbRef;
+		*mNbRef = *mNbRef + 1;
 		mPtr = copie.mPtr;
-	return *this;
+		mDeleteFunction = copie.mDeleteFunction;
+		return *this;
 	}
 
 	int main ( )
 {
 	cout << "Fuck you!!" << endl;
-	SmartPointer<int> test;
-	int tmp = test.getCount();
+	SmartPointer<int> test1;
+	SmartPointer<int> test2;
+	test2 = test1;
+	int tmp = test2.getCount();
 	cout << "nbref = " << tmp << endl;
+	tmp = test1.getCount();
+	cout << "nbref = " << tmp << endl;
+
 	/**
 	// TEST LE COMPTE DE REFERENCES
 	SmartPointer < int > sm ( new int (4) ) ;
