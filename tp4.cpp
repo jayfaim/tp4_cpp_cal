@@ -59,11 +59,12 @@ using namespace std;
 	SmartPointer<T>& SmartPointer<T>::operator*(const SmartPointer<T> &copie){
 		
 	}
+	/*
 	template<typename T>
 	SmartPointer<T>& SmartPointer<T>::operator[](int idx) const{
 		return SmartPointer<T>[idx];
 	}
-
+	*/
 	int main ( )
 {
 	cout << "Fuck you!!" << endl;
