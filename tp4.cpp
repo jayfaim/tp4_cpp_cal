@@ -55,14 +55,6 @@ using namespace std;
 		cout << "test valeur *mPtr = " << *mPtr << endl;
 		return *mPtr;	
 	}
-	template<typename T>
-	SmartPointer<T>& SmartPointer<T>::operator*(const SmartPointer<T> &copie){
-		
-	}
-	template<typename T>
-	SmartPointer<T>& SmartPointer<T>::operator[](const SmartPointer<T> &copie){
-		
-	}
 
 	int main ( )
 {
@@ -75,9 +67,8 @@ using namespace std;
 	cout << "nbref = " << tmp << endl;
 	tmp = test1.getCount();
 	cout << "nbref = " << tmp << endl;
-	test3->data();
+	tmp = test3->size();
 	cout << "taille test3 = " << tmp << endl;
-
 
 	/**
 	// TEST LE COMPTE DE REFERENCES
