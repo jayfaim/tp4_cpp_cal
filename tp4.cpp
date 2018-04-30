@@ -84,6 +84,12 @@ using namespace std;
 	cout << "**********tests max**************" << endl;
 	int foo [5] = { 16, 2, 77, 40, 12071 };
 	SmartPointer<int []> testTab1;
+	SmartPointer<int> test5(new int(4));
+	int *patate = *test5;
+	
+
+	
+	cout << "Fuck you!!" << *patate << endl;
 
 	/**
 	// TEST LE COMPTE DE REFERENCES
@@ -121,4 +127,5 @@ using namespace std;
 	cout << tab [0] << endl ;
 	assert ( tab . getCount () ==1) ;
 	**/
+	return 0;
 }
