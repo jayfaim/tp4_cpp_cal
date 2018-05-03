@@ -25,6 +25,7 @@
       
       typedef void (* DeleteFunctionType )(T *p);
       
+      
       // un pointeur vers une fonction statique de destruction du pointeur.
       DeleteFunctionType* mDeleteFunction;
     
@@ -35,7 +36,7 @@
       SmartPointer<T>(T*);
 
       //Constructeur avec pointeur vers fonction de destruction et la donnée
-      SmartPointer<T>(T*,DeleteFunctionType*);
+      SmartPointer<T>(T*, DeleteFunctionType*);
       
       //Constructeur par copie(prend une référence vers un autre smartpointer)
       SmartPointer<T>(SmartPointer<T>&);
@@ -45,14 +46,17 @@
       
       ~SmartPointer<T>();
       SmartPointer<T>& operator=(const SmartPointer<T>&);
+      SmartPointer<T>& operator=(const T copie);
       bool operator==(const T&);
 	    T* operator->();
-	    T* operator*() const;
-      SmartPointer<T>& operator[](int idx) const;
+	    T& operator*();
+      T& operator[](int idx);
  
       // — La fonction getCount(), qui vous donnera accès au nombre de références à mPtr.
       //  Cette fonction pourra être utilisée durant le débogage avec “assert”. 
       int getCount();
+      
+      int size();
   };
 
 #endif
