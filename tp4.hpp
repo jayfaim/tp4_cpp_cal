@@ -46,7 +46,6 @@
       
       ~SmartPointer<T>();
       SmartPointer<T>& operator=(const SmartPointer<T>&);
-      SmartPointer<T>& operator=(const T copie);
       bool operator==(const T&);
 	    T* operator->();
 	    T& operator*();
